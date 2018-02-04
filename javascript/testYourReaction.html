@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>"測試你的反應時間"</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		
+		#box{
+			width: 200px;
+			height: 200px;
+			background: black;
+			display: none;
+			position: relative;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		var createdTime; 
+		var clickTime;
+		var reactionTime;
+
+		function disappear(argument){
+			document.getElementById("box").style.display="none";
+			clickTime = Date.now();
+			console.log(clickTime);
+			printReactionTime();
+			makeBox();
+		}
+
+		function random2second(argument) {
+			return (Math.random()*2*1000);
+		}
+
+		function makeBox(argument) {
+			var waitingTime = random2second();
+
+			setTimeout(function(){
+				allRandom();
+				document.getElementById("box").style.display="block"
+			}, (waitingTime)
+			)
+
+			createdTime = Date.now()+waitingTime;
+			console.log(createdTime);
+		}
+
+		function printReactionTime(argument) {
+			reactionTime = (clickTime-createdTime);
+			document.getElementById("YourReactionTime").innerHTML= (reactionTime/1000);
+		}
+		
+		function getRandomColor(argument) {
+			var color = "#";
+			var letters = "0123456789ABCDEF".split("");
+
+			for (i=0; i<6; i++) {
+				color+= letters[Math.floor(Math.random()*16)];
+			}
+
+			console.log(typeof color);
+			console.log(color);
+			return(color);
+		}
+
+		function setRandomBox(argument) {
+			var AorB = Math.random();
+			if (AorB > 0.5) {
+				document.getElementById("box").style.borderRadius = "100px";
+			}
+			else
+			{
+				document.getElementById("box").style.borderRadius = "0px";	
+			}
+			console.log(AorB);
+		}
+
+		function setRandomLocation(argument) {
+			var A = Math.random()*600;
+			var B = Math.random()*1000;
+			document.getElementById("box").style.top = (A+"px");
+			document.getElementById("box").style.left = (B+"px");
+			console.log(A+"px");
+			console.log(B+"px");
+		}
+
+		function allRandom(argument) {
+			setRandomLocation();			
+				document.getElementById("box").style.backgroundColor=getRandomColor();
+				setRandomBox();
+		}
+		
+		makeBox();
+				
+		</script>
+
+</head>
+<body>
+	<p>Your Reaction Time: <span id="YourReactionTime">0</span>s </p>
+	<div id="box" onclick="javascript:disappear();"></div>
+
+
+</body>
+</html>

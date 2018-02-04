@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript_practice</title>
+	<meta charset="utf-8">
+
+	<script language="javascript" >
+		var number = Math.floor(Math.random()*6);
+		console.log(number);
+
+		function guess() {
+			if (document.getElementById("finger").value == number) {
+				alert("You are right!")
+			}
+			else{
+				alert("No,you are wrong!")
+			}
+			
+			}
+
+		function textChanger() {
+				var inputFrom_dongfans = document.getElementById("dongFans").value;
+
+				document.getElementById("firstDiv").innerHTML = inputFrom_dongfans;
+			}	
+	
+		
+	</script>
+	
+
+</head>
+
+
+<body>
+
+	<input type="text" id="dongFans">
+
+	<button id="godong" onclick="javascript:textChanger();">
+	國棟</button>
+
+	<div id="firstDiv">
+		5555555555555555555
+	</div>
+
+	<div>
+		<p>猜猜看我伸出幾根手指??</p>
+
+		<input type="text" id="finger">
+
+		<button onclick="javascript:guess();">submit</button>
+	</div>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>change Text</title>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script>
+		function changeText(text_id) {
+			text_id.text("Good job!!");
+		}
+
+		function thisFadeOut(argument){
+			$("div").click(
+				function(){
+					$(this).fadeOut();}
+			)
+		}
+		
+	</script>
+
+	<style type="text/css">
+		#circle{
+			width: 200px;
+			height: 200px;
+			border-radius: 100px;
+			background-color: red;
+		}
+
+		.square{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="circle" onclick="changeText($(text1));"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+	<p id="text1">text</p>
+
+	<script>
+		thisFadeOut();
+		
+		$("div").on({
+			"mousein"    : function() {$(this).animate({width:"400px"});},
+			"mouseleave" : function() {$(this).animate({width:"200px"});}
+		});
+		
+	</script>
+
+</body>
+</html>
