@@ -1,4 +1,107 @@
-123
-456
-798
-aaa
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery FormCheck</title>
+	<meta charset="utf-8">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<style type="text/css">
+		#wrapper{
+			width: 800px;
+			margin: auto;
+						
+		}
+
+		input{
+			width: 300px;
+			height: 40px;
+			border-radius: 5px;
+			border: 1px solid gray;
+			font-size: 1.2em;
+			margin: 5px;
+		}
+
+		label{
+			width: 200px;
+			font-size: 1.2em;
+			padding-right: 50px;
+			float: left;
+			margin-top: 13px;
+		}
+	
+		#submitButton{
+			margin-left: 255px;
+			width: 100px;
+		}
+
+		#error{
+			color: red;
+			width: 600px;
+
+		}
+	</style>
+</head>
+<body>
+
+	<div id="wrapper">
+
+		<p id="error"></p>
+
+		<form id="validationForm">
+
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email">
+
+			<label for="phone">Tellphone</label>
+			<input type="phone" name="phone" id="phone">
+
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password">
+
+			<label for="confirm_password">Confirm Password</label>
+			<input type="confirm_password" name="confirm_password" id="confirm_password">
+
+			<input id="submitButton" type="submit" value="Submit"></label>
+
+		</form>
+	</div>
+
+	<script>
+			
+		$("#validationForm").submit(function (event) {
+
+			var errorMessage="";
+			event.preventDefault();
+			
+			if (!($("#email").val() )) {
+				errorMessage += "Please enter valid email";
+			}
+			else{
+				console.log($("#eamil").val());
+			}
+
+			if (!$.isNumeric( $("#phone").val() ) ) {
+				errorMessage += "<br>Please enter valid Phonenumber";
+			}
+			else{
+				console.log($("#phone").val());
+			}
+
+			if ($("#password").val() != $("#confirm_password") ) {
+				errorMessage += "<br>Your confirm password is different from your password";
+			}
+			else{
+				console.log($("#phone").val());
+			}
+
+
+		$("#error").html(errorMessage);
+
+		console.log(errorMessage);
+		})
+
+	</script>
+
+</body>
+</html>
