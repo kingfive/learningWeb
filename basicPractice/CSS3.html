@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS3</title>
+        <style type="text/css">
+
+            .box1{
+                background-color: red;
+                height: 200px;
+                width: 200px;
+                margin: 50px auto;
+                padding: 20px;
+                box-sizing: border-box;
+                border-bottom-right-radius: 40px;
+                border-bottom-left-radius: 40px;
+                animation-name: box1;
+                animation-duration: 5s;
+            }
+
+            @keyframes box1 {
+                from{
+                    border-bottom-right-radius: 40px;
+                    border-bottom-left-radius: 40px;
+                }
+                to{
+                    border-radius:100px;
+                }
+            }
+
+            body#colors{
+                background-color: rgb(26,62,84);
+                color: white;
+            }
+
+            #colors #container{
+                width: 800px;
+                height: 600px;
+                background-color: rgba(255,255,255, 0.5);
+            }
+
+            #radiuscolor{
+                background: linear-gradient(green,blue);
+            }
+
+            .boxshadow {
+                box-shadow: 10px 20px 10px #000;
+            }
+
+            .textshadow{
+                text-shadow:0px 10px 5px #000,
+                            -10px -5px 2px red;
+            }
+
+            #three_columns{
+                column-count: 3;
+                column-gap: 40px;
+                column-rule-style: solid;
+                column-rule-width: 1px;
+                column-rule-color: black;
+            }
+
+
+        </style>
+    </head>
+    <body id="colors">
+
+        <div id="container" class="boxshadow">
+
+            <h1>CSS3 Colors</h1>
+
+            <div>
+                <p class="box1">There is some text.</p>
+            </div>
+
+            <div>
+                <p id="radiuscolor" class="box1" >There is some text.
+                    There is some text.There is some text.</p>
+            </div>
+
+        </div>
+
+        <div>
+
+            <h1 class="textshadow">There is some shadow.
+                There is some shadow.There is some shadow.</h1>
+
+        </div>
+
+        <div id="three_columns">
+            <p>There is some text.There is some textssssssss
+                ssssssssssssssssssssssssssssssssssssss.
+                There is some text.There is some texts.
+                There is some text.There is some text.
+                There is some text.There is some text.
+                There is some text.There is some text.
+                There is some text.There is some text.
+                There is some text.There is some text.
+                There is some text.There is some text.
+                There is some text.There is some text.
+                There is some text.There is some text.
+                There is some text.There is some text.
+            </p>
+        </div>
+
+    </body>
+</html>

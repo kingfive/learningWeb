@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>個人資料調查</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>個人資訊</legend>
+            <p>
+            <label for="userName">姓名：</label>
+            <input type="text" name="userName" value="">
+            </p>
+            <p>
+            <label for="gender">性別：</label>
+            <input type="radio" name="gender" value="male">男
+            <input type="radio" name="gender" value="female">女
+            </p>
+            <p>
+                <label for="education">最高學歷：</label>
+                <select class="" name="userEducation">
+                    <option value="senior high">高中或以下</option>
+                    <option value="college">大專院校</option>
+                    <option value="master">碩士</option>
+                    <option value="phd">博士</option>
+                </select>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>其他資訊</legend>
+            <p>
+                <label for="leisureActivity">您喜歡下列哪些活動（可複選）？
+                </label>
+                <br>
+                <input type="checkbox" name="leisureActivity"
+                 value="reading">閱讀
+                <input type="checkbox" name="leisureActivity"
+                 value="playBall">打球
+                <input type="checkbox" name="leisureActivity"
+                 value="shopping">逛街
+                <input type="checkbox" name="leisureActivity"
+                 value="listeningMusic">聽音樂
+                <input type="checkbox" name="leisureActivity"
+                 value="waterActivity">水上活動
+                <input type="checkbox" name="leisureActivity"
+                 value="travel">旅行
+            </p>
+            <p>
+                您對於使用臉書經營社群有何看法？
+                <br>
+                <textarea name="optionAboutFacebookGroup"
+                 rows="8" cols="80"></textarea>
+            </p>
+        </fieldset>
+        <p>
+        <input type="submit" name="send" value="傳送資料">
+        <input type="submit" name="clear" value="清除資料">
+        </p>
+    </form>
+</body>
+</html>
