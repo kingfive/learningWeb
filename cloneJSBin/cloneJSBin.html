@@ -5,6 +5,9 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="cloneJSBin.css">
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+
 </head>
 <body>
 
@@ -12,7 +15,81 @@
 		<div id="logo">
 			CodePlayer
 		</div>
+
+		<div id="toggles">
+			<li class="toggle selected">HTML</li>
+			<li class="toggle">CSS</li>
+			<li class="toggle">JavaScript</li>
+			<li class="toggle">Console</li>
+			<li class="toggle selected">Output</li>
+		</div>
+
+		<div class="buttonDiv"> 
+			<button id="runButton">Run</button>
+		</div>
+	</div> 
+
+	<div class="clear">
+
+		<div class="codeContainer" id="HTMLContainer">
+			<div class="codeLabel">HTML</div>
+			<textarea id="HTMLCode"></textarea>
+		</div>
+
+		<div class="codeContainer" id="CSSContainer">
+			<div class="codeLabel">CSS</div>
+			<textarea id="CSSCode"></textarea>
+		</div>
+
+		<div class="codeContainer" id="JavaScriptContainer">
+			<div class="codeLabel">JavaScript</div>
+			<textarea id="JSCode"></textarea>
+		</div>
+
+		<div class="codeContainer" id="ConsoleContainer">
+			<div class="codeLabel">Console</div>
+			<iframe id="ConsoleIframe"></iframe>
+		</div>
+
+		<div class="codeContainer" id="OutputContainer">
+			<div class="codeLabel">Output</div>
+			<iframe id="OutputIframe"></iframe>
+		</div>
+	
 	</div>
+
+
+
+	<script>
+		
+		var windowHeight=$(window).height();
+		var menuBarHeight=$("#menuBar").height();
+		
+		var codeContainerHeight=windowHeight-menuBarHeight;
+		
+		$(".codeContainer").height(codeContainerHeight+"px");
+		
+		$(".toggle").click(function select(argument) {
+			$(this).toggleClass("selected");
+
+			var activeDiv=$(this).html();
+
+			$("#"+activeDiv+"Container").toggle();
+
+			var showingDivCount = $(".codeContainer").filter(function () {
+					return ($(this).css("display")!="none");	
+					}
+				).length;
+
+			var width=100/showingDivCount;
+			$(".codeContainer").css("width",width+"%");
+		});
+
+		$("#runButton").click(function(){
+				$("#OutputIframe").contents().find("html").html("<style>" + $("#CSSCode").val() + "</style>" + $("#HTMLCode").val() );		
+		});
+
+	</script>
 
 </body>
 </html>

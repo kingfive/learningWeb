@@ -1,6 +1,126 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
 #menuBar{
+	position: fixed;
 	background-color: #EDEDED;
 	width: 100%;
-	height: 5%;
+	height: 40px;
+	font-family: "Myriad Set Pro","Helvetica Neue"
+	,"Helvetica","Arial",sans-serif;
+	border-bottom: 1px solid #BFBFBF;
+	z-index: 5;
+}
+
+#logo{
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.buttonDiv{
 
 }
+
+#runButton{
+	float: right;
+	position: relative;
+	top: -40px;
+	right: 5px;
+	font-size: 16px;
+}
+
+#toggles{
+	height: 20px;
+	width: 350px; 
+	margin-left: 40%;
+	list-style: none;
+	position: relative;
+	top: -25px;
+}
+
+#toggles li{
+	float: left;
+	border : 1px solid #BFBFBF;
+	padding: 5px 8px;
+}
+
+#toggles li:nth-child(1){
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+#toggles li:nth-child(5){
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.clear{
+	clear: both;
+}
+
+.codeContainer{
+	position: relative;
+	top: 40px;
+	width: 50%;
+	float: left;
+}
+/*
+#HTMLContainer{
+	width: 50%;
+	height: 100%;
+	border-right: none;
+}
+*/
+#codeArea {
+}
+
+.codeContainer textarea{
+	width: 100%;
+	height: 99%;
+	font-size: 1.5em;
+	border: none;
+	border-right: 1px solid #BFBFBF;
+	box-sizing: border-box;
+}
+
+.codeLabel{
+	right: 10px;
+	top: 10px;
+	position: absolute;
+	font-weight: bold;
+	color: #2DBFFF;
+	z-index: 3;
+}
+
+#CSSContainer, #JavaScriptContainer, #ConsoleContainer{
+	display: none;
+}
+
+#OutputContainer {
+	position: relative;
+	float: right;
+	width: 50%;
+	height: 100%;
+}
+
+iframe{
+	position: relative;
+	width: 98%;
+	height: 100%;
+	left: 4px;
+	border: none;
+}
+
+#ConsoleIframe{
+	border: none;
+	border-right: 1px solid #BFBFBF;
+	box-sizing: border-box;
+}
+
+.selected{
+	background-color: #95D8FF;
+}
+
+
